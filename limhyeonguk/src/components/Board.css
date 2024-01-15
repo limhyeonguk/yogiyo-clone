@@ -1,0 +1,167 @@
+/* 전체 컨테이너에 대한 스타일 설정 */
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* 선택 항목의 패딩, 폰트 크기, 테두리, 색상 등 스타일 설정 */
+.sort-select {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-left: 10px;
+}
+
+/* 컨텐츠 컨테이너 전체에 패딩 추가 */
+#content-container {
+  padding: 20px;
+}
+
+/* 메뉴 바 스타일 추가 */
+.menu-bar {
+  display: flex;
+  flex-wrap: wrap; /* 행으로 나오도록 설정 */
+  gap: 10px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+/* 메뉴 바 버튼 스타일 설정 */
+.menu-bar button {
+  background-color: #fff;
+  border: none;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: color 0.3s, box-shadow 0.3s; /* color와 box-shadow에 대한 트랜지션 추가 */
+  font-size: 16px;
+  color: #555;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+}
+
+/* 메뉴 바 버튼에 마우스를 올렸을 때의 스타일 설정 */
+.menu-bar button:hover {
+  color: #007bff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 강화 */
+}
+
+/* 메뉴 바 버튼을 클릭했을 때의 스타일 설정 */
+.menu-bar button:active {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* 클릭 시 그림자 효과 조절 */
+}
+
+/* 정렬 레이블 우측 여백 조절, 텍스트 정렬, 색상 설정 */
+.sort-label {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  color: #555;
+  font-size: 14px;
+}
+
+/* 720px 미만에서는 "전체보기"만 보이도록 설정 */
+@media (max-width: 720px) {
+  .menu-bar button:not(:first-child) {
+    display: none;
+  }
+
+  .menu-bar:hover button {
+    display: flex;
+  }
+
+  /* 메뉴 바 버튼 스타일 수정 */
+  .menu-bar button {
+    padding: 10px 15px; /* 조금 더 작은 패딩 적용 */
+    font-size: 14px; /* 작은 폰트 크기 적용 */
+  }
+}
+
+/* 보드 컨테이너 스타일 설정 */
+.board-container {
+  display: flex;
+  flex-wrap: wrap; /* 2열로 나오도록 설정 */
+  gap: 10px; /* 간격 조절 */
+}
+
+/* 각 보드 아이템의 스타일 설정 */
+.board-item {
+  width: calc(50% - 5px); /* 2열로 표시, 간격을 뺀 값으로 설정 */
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* 이미지 크기 조절 및 테두리 설정 */
+.board-item img {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ddd;
+  border-radius: 05px;
+  margin-right: 10px;
+}
+
+/* 나머지 내용들을 감싸는 컨테이너에 대한 스타일 설정 */
+.board-item .content-info {
+  display: flex;
+  align-items: center; /* 세로 중앙 정렬 */
+  width: 100%; /* 내용이 차지하는 영역을 100%로 설정 */
+  padding: 10px; /* 내용 주위에 간격 추가 */
+  border: 0px solid #ddd; /* 각 항목을 구분하기 위한 테두리 추가 */
+  border-radius: 5px; /* 테두리를 둥글게 설정 */
+  box-sizing: border-box;
+  background-color: #fff; /* 배경색 추가 */
+}
+
+/* 보드 컨테이너 아이템들이 720px 이하에서 행으로 나오도록 설정 */
+/* 720px 이하에서는 보드 아이템이 행으로 나오도록 설정 */
+@media (max-width: 720px) {
+  .board-container {
+    flex-direction: column; /* 컬럼으로 나오도록 설정 */
+  }
+
+  .board-item {
+    width: 100%; /* 100% 너비를 가지도록 설정 */
+  }
+}
+
+/* 컨텐츠 정보 스타일 설정 */
+.content-info {
+  display: flex;
+  align-items: center;
+  width: 100%; /* 내용이 차지하는 영역을 100%로 설정 */
+}
+
+/* 컨텐츠 이름 스타일 설정 */
+.content-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 10px;
+  flex: 1; /* 남은 공간을 모두 차지하도록 설정 */
+}
+
+/* 나머지 정보 스타일 설정 */
+.content-info p {
+  margin-right: 10px;
+}
+
+/* 별점 정보 스타일 설정 */
+.star-rating {
+  margin-right: 10px;
+  color: darkorange;
+}
+
+/* 리뷰 정보 스타일 설정 */
+.reviews-info {
+  margin-right: 10px;
+}
+
+/* 주문 정보 스타일 설정 */
+.order-info {
+  font-size: 12px;
+}
